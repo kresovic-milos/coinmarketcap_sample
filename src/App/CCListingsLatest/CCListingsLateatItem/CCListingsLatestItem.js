@@ -4,12 +4,10 @@ import { StyleSheet } from 'react-native';
 import { Icon, ListItem, Text } from 'react-native-elements';
 
 const CCListingsLatestItem = ({
-  item: {
-    symbol,
-    name,
-    quote: {
-      USD: { price, percent_change_24h: change24 }
-    }
+  symbol,
+  name,
+  quote: {
+    USD: { price, percent_change_24h: change24 }
   }
 }) => {
   const isTrending = change24 > 0;

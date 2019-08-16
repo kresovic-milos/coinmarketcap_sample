@@ -1,8 +1,7 @@
 const initialState = {
-  inProgress: true,
+  inProgress: false,
   fail: false,
   error: null,
-  ccListingsLatest: {},
   sortBy: '',
   order: true,
   searchQuery: ''

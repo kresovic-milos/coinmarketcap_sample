@@ -17,9 +17,9 @@ const CCListingsLatest = ({ cryptocurrencies, fetchCCListingsLatest, inProgress 
 
       {cryptocurrencies && (
         <FlatList
-          keyExtractor={item => `${item.id}`}
-          data={cryptocurrencies.data}
-          renderItem={CCListingsLatestItem}
+          keyExtractor={item => item}
+          data={Object.keys(cryptocurrencies)}
+          renderItem={({ item }) => <CCListingsLatestItem ccId={item} />}
         />
       )}
     </View>
