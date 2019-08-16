@@ -10,7 +10,7 @@ export function* fetchCCListingLatest$() {
   try {
     const response = yield repo.getCryptocurrencyListingsLatest();
 
-    yield put(fetchCCListingsLatestSuccess(response));
+    yield put(fetchCCListingsLatestSuccess(response.data));
   } catch (error) {
     yield put(fetchCCListingsLatestFail({ error }));
   }
