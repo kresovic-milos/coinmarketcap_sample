@@ -21,7 +21,7 @@ const CCListingsLatest = ({ cryptocurrencies, fetchCCListingsLatest, inProgress 
 
   return (
     <View style={styles.body}>
-      {initLoading && <ActivityIndicator />}
+      {initLoading && <ActivityIndicator size="large" />}
 
       {!isEmpty(cryptocurrencies) && (
         <FlatList
@@ -44,7 +44,7 @@ const CCListingsLatest = ({ cryptocurrencies, fetchCCListingsLatest, inProgress 
                   marginTop: 10,
                   marginBottom: 10
                 }}>
-                <ActivityIndicator animating size="large" />
+                <ActivityIndicator size="large" />
               </View>
             )
           }

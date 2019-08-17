@@ -1,11 +1,13 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { Header } from 'react-native-elements';
 import CCListingsLatest from './CCListingsLatest';
 
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
+      <Header centerComponent={{ text: 'Coinmarketcap', style: { color: '#fff' } }} />
       <SafeAreaView style={styles.body}>
         <CCListingsLatest />
       </SafeAreaView>
