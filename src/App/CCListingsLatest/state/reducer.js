@@ -27,7 +27,8 @@ export default handleActions(
         inProgress: false,
         fail: false,
         error: null,
-        cryptocurrencies: payload
+        page: state.page + 1,
+        cryptocurrencies: { ...state.cryptocurrencies, ...payload }
       })
     ]
   ]),

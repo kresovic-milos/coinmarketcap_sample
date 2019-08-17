@@ -4,7 +4,9 @@ const initialState = {
   error: null,
   sortBy: '',
   order: true,
-  searchQuery: ''
+  searchQuery: '',
+  cryptocurrencies: {},
+  page: 0
 };
 
 export default initialState;

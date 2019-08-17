@@ -1,5 +1,5 @@
 import { keyBy } from 'lodash';
-import { all, put, takeLatest } from 'redux-saga/effects';
+import { all, put, select, takeLatest } from 'redux-saga/effects';
 import repo from '../../../data/repositories/coinmarketcap';
 import {
   CC_LISTINGS_LATEST,
@@ -9,7 +9,8 @@ import {
 
 export function* fetchCCListingLatest$() {
   try {
-    const response = yield repo.getCryptocurrencyListingsLatest();
+    const page = yield select(state => state.ccListingsLatest.page);
+    const response = yield repo.getCryptocurrencyListingsLatest(page);
     const ccMap = keyBy(response.data.data, 'id');
     yield put(fetchCCListingsLatestSuccess(ccMap));
   } catch (error) {
