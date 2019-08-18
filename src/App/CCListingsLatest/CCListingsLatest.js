@@ -4,10 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, View } from 'react-native';
 import CCListingsLatestItem from './CCListingsLateatItem';
 
-const CCListingsLatest = props => {
-  const { cryptocurrencies, fetchCCListingsLatest, inProgress } = props;
-  console.log('props', cryptocurrencies);
-
+const CCListingsLatest = ({ cryptocurrencies, fetchCCListingsLatest, inProgress }) => {
   const [onEndReachedCalledDuringMomentum, setOnEndReachedCalledDuringMomentum] = useState(false);
 
   const fetchCCListing = async () => {

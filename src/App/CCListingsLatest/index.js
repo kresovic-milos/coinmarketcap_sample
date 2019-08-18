@@ -4,8 +4,6 @@ import { fetchCCListingsLatest } from './state/actions';
 import { getCCListingsLatestSelector } from './state/selectors';
 
 const mapStateToProps = state => {
-  console.log('mapStateToProps', state);
-
   const ccListingsLatest = getCCListingsLatestSelector(state);
   return {
     ...ccListingsLatest
