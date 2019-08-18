@@ -7,6 +7,13 @@ import configureStore from './src/store';
 
 const store = configureStore();
 
+if (__DEV__) {
+  /* eslint no-undef: 0 */
+  XMLHttpRequest = GLOBAL.originalXMLHttpRequest
+    ? GLOBAL.originalXMLHttpRequest
+    : GLOBAL.XMLHttpRequest;
+}
+
 const Main = () => {
   return (
     <Provider store={store}>

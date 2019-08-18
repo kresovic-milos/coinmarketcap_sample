@@ -1,9 +1,16 @@
 import { connect } from 'react-redux';
 import CCListingsLatest from './CCListingsLatest';
 import { fetchCCListingsLatest } from './state/actions';
-import { getCCListingsLatest } from './state/selectors';
+import { getCCListingsLatestSelector } from './state/selectors';
 
-const mapStateToProps = state => ({ ...getCCListingsLatest(state) });
+const mapStateToProps = state => {
+  console.log('mapStateToProps', state);
+
+  const ccListingsLatest = getCCListingsLatestSelector(state);
+  return {
+    ...ccListingsLatest
+  };
+};
 const mapDispatchToProps = { fetchCCListingsLatest };
 
 export default connect(
